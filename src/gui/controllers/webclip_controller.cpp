@@ -512,6 +512,7 @@ void WebClipController::autoConnectOnStartup() {
     if (!autoConnect_) return;
     if (connected_ || connecting_) return;
     if (host_.trimmed().isEmpty() || code_.trimmed().isEmpty()) {
+        wantConnected_ = true;
         discoverPhoneOnLan();
         return;
     }
